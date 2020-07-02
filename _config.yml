@@ -1,16 +1,16 @@
 # Site settings
-title:          Tale
-description:    "Minimal Jekyll theme for storytellers"
-url:            "https://chesterhow.github.io"
+title:          Dhruv Makwana's blog
+description:    "I want to understand things clearly, and explain them well (Inspired by Christopher Olah)"
+url:            "https://dhruvmakwana.github.io"
 
 # Google Analytics
 google_analytics: UA—XXXXXXXX-X
 
 # Author
 author:
-  name:         Chester How
-  url:          https://chester.how
-  email:        chesterhow@gmail.com
+  name:         Dhruv Makwana
+  url:          https://dhruvmakwana.github.io
+  email:        dmakwana503@gmail.com
 
 # Build settings
 markdown:       kramdown
