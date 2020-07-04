@@ -13,7 +13,7 @@ Entire code of this can be found [here](https://github.com/DhruvMakwana/crop-dis
 
 ## Demo of application
 
-<img src="../images/plantdisease.gif">
+<img src="../images/plantdisease/plantdisease.gif">
 
 ## Dataset
 Here we have used the plant village dataset. The PlantVillage dataset consists of 61,486 healthy and unhealthy leaf images divided into 39 categories by species and disease.
