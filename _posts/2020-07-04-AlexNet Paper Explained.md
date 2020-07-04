@@ -3,6 +3,7 @@ layout: post
 title:  "Understanding AlexNet paper"
 author: "Dhruv Makwana"
 comments: true
+tags: "alexnet paper" "understanding alexnet" "alexnet explained"
 ---
 
 <img src="../images/alexnet/image12.png">
@@ -16,7 +17,7 @@ Until recently, datasets of labeled images were relatively small on the order of
 ImageNet is a dataset of over 15 million labeled high-resolution images belonging to roughly 22,000 categories. Starting in 2010, as part of the Pascal Visual Object Challenge, an annual competition called the ImageNet Large-Scale Visual Recognition Challenge (ILSVRC) has been held. ILSVRC uses a subset of ImageNet with roughly 1000 images in each of 1000 categories. In all, there are roughly 1.2 million training images, 50,000 validation images, and 150,000 testing images. ILSVRC-2010 is the only version of ILSVRC for which the test set labels are available, so this is the version on which they performed most of their experiments. They also entered their model in the ILSVRC-2012 competition. They down-sampled the images to a fixed resolution of 256 × 256. Given a rectangular image, they first rescaled the image such that the shorter side was of length 256, and then cropped out the central 256×256 patch from the resulting image. they did not pre-process the images in any other way, except for subtracting the mean activity over the training set from each pixel. So they trained their network on the (centered) raw RGB values of the
 pixels.
 
-<img src="../images/image6.jpg">
+<img src="../images/alexnet/image6.jpg">
 
 ## Architecture
 
@@ -131,7 +132,9 @@ The fifth convolutional layer has 256 kernels of size 3 × 3 × 192.
 
 The fully-connected layers 1 have 4096 neurons.
 
-<img src="..images/image15.png">
+### layer 6
+
+<img src="..images/alexnet/image15.png">
 
 * 6 * 6 * 256 inputs are given to the 1st fully connected layer of 4096 neurons.
 * So output volume is size is 4096 and number of parameters are (6 * 6 * 256 + 1) * 4096 = 37,752,832
@@ -186,63 +189,20 @@ Model is trained using stochastic gradient descent with a batch size of 128 exam
 Results on ILSVRC-2010 are summarized below Table. Network achieves top-1 and top-5
 test set error rates of 37.5% and 17.0%.
 
-<table>
-	<tr>
-		<th>Model</th>
-		<th>Top-1</th>
-		<th>Top-5</th>
-	</tr>
-	<tr>
-		<td>Sparse coding</td>
-		<td>47.1%</td>
-		<td>28.2%</td>
-	</tr>
-	<tr>
-		<td>SIFT + FVs</td>
-		<td>45.7%</td>
-		<td>25.7%</td>
-	</tr>
-	<tr>
-		<td>CNN</td>
-		<td>37.5%</td>
-		<td>17.0%</td>
-	</tr>
-</table>
+| 	  Model 	| Top-1 | Top-5 |
+|---------------|-------|-------|
+| Sparse coding | 47.1% | 28.2% |
+|  SIFT + FVs 	| 45.7% | 28.2% |
+| 	   CNN 		| 37.5% | 17.0% |
 
 Results on ILSVRC-2012 are summarized below Table. The CNN described in this paper achieves a top-5 error rate of 18.2%. Averaging the predictions of five similar CNNs gives an error rate of 16.4%.
 
-<table>
-	<tr>
-		<th>Model</th>
-		<th>Top-1 (val)</th>
-		<th>Top-5 (val)</th>
-		<th>Top-5 (test)</th>
-	</tr>
-	<tr>
-		<td>SIFT + FVs</td>
-		<td>-</td>
-		<td>-</td>
-		<td>26.0%</td>
-	</tr>
-	<tr>
-		<td>1 CNN</td>
-		<td>40.7%</td>
-		<td>18.2%</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>1 CNN*</td>
-		<td>39.0%</td>
-		<td>16.6%</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>7 CNNs*</td>
-		<td>36.7%</td>
-		<td>15.4%</td>
-		<td>15.3%</td>
-	</tr>
-</table>
+| 	  Model 	| Top-1 (val) | Top-5 (val) | Top-5 (Test) |
+|---------------|-------------|-------------|--------------|
+|  SIFT + FVs   |      -      |      -      |     26.0%    |
+|     1 CNN	    |    40.7%    |    18.2%    |       -      |
+| 	  1 CNN*	|    39.0%    |    16.6%    |       -      |
+| 	  7 CNN*	|    36.7%    |    15.4%    |     15.3%    |
 
 ## Summary 
 
