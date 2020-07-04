@@ -133,7 +133,7 @@ The fully-connected layers 1 have 4096 neurons.
 
 ### layer 6
 
-<img src="..images/alexnet/image15.png">
+<img src="../images/alexnet/image15.png">
 
 * 6 * 6 * 256 inputs are given to the 1st fully connected layer of 4096 neurons.
 * So output volume is size is 4096 and number of parameters are (6 * 6 * 256 + 1) * 4096 = 37,752,832
@@ -188,20 +188,20 @@ Model is trained using stochastic gradient descent with a batch size of 128 exam
 Results on ILSVRC-2010 are summarized below Table. Network achieves top-1 and top-5
 test set error rates of 37.5% and 17.0%.
 
-| 	  Model 	| Top-1 | Top-5 |
-|---------------|-------|-------|
+| Model | Top-1 | Top-5 |
+|:------:|:-----:|:-----:|
 | Sparse coding | 47.1% | 28.2% |
-|  SIFT + FVs 	| 45.7% | 28.2% |
-| 	   CNN 		| 37.5% | 17.0% |
+| SIFT + FVs | 45.7% | 28.2% |
+| CNN | 37.5% | 17.0% |
 
 Results on ILSVRC-2012 are summarized below Table. The CNN described in this paper achieves a top-5 error rate of 18.2%. Averaging the predictions of five similar CNNs gives an error rate of 16.4%.
 
-| 	  Model 	| Top-1 (val) | Top-5 (val) | Top-5 (Test) |
-|---------------|-------------|-------------|--------------|
-|  SIFT + FVs   |      -      |      -      |     26.0%    |
-|     1 CNN	    |    40.7%    |    18.2%    |       -      |
-| 	  1 CNN*	|    39.0%    |    16.6%    |       -      |
-| 	  7 CNN*	|    36.7%    |    15.4%    |     15.3%    |
+| Model | Top-1 (val) | Top-5 (val) | Top-5 (Test) |
+|:------:|:--------:|:---------:|:-----------:|
+| SIFT + FVs | - | - | 26.0% |
+| 1 CNN | 40.7% | 18.2% | - |
+| 1 CNN* | 39.0% | 16.6% | - |
+| 7 CNN* | 36.7% | 15.4% | 15.3% |
 
 ## Summary 
 
