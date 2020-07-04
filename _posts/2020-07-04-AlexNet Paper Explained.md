@@ -3,7 +3,6 @@ layout: post
 title:  "Understanding AlexNet paper"
 author: "Dhruv Makwana"
 comments: true
-tags: "alexnet paper" "understanding alexnet" "alexnet explained"
 ---
 
 <img src="../images/alexnet/image12.png">

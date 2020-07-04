@@ -3,7 +3,6 @@ layout: post
 title:  "Plant Disease Classification"
 author: "Dhruv Makwana"
 comments: true
-tags: "plant disease classification" "disease detection" "plant village"
 ---
 
 <p>Crop diseases are a major threat to food security, but their rapid identification remains difficult in many parts of the world due to the lack of the necessary infrastructure. The combination of increasing global smartphone penetration and recent advances in computer vision made possible by deep learning has paved the way for disease diagnosis.</p>
