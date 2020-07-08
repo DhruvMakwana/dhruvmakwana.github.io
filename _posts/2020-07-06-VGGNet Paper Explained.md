@@ -41,13 +41,13 @@ In the above image VGG-11 is network A, VGG-11 (LRN) is network A-LRN, VGG-13 is
 
 <pre>
 Parameters of VGG16(not counting biases)
-INPUT: 		[224x224x3] 			params: 0
-CONV3-64: 	[224x224x64] 			params: (3*3*3)*64 = 1,728
+INPUT: 		[224x224x3]             params: 0
+CONV3-64: 	[224x224x64]            params: (3*3*3)*64 = 1,728
 CONV3-64: 	[224x224x64] 			params: (3*3*64)*64 = 36,864
 POOL2: 		[112x112x64] 			params: 0
 CONV3-128: 	[112x112x128] 			params: (3*3*64)*128 = 73,728
 CONV3-128: 	[112x112x128] 			params: (3*3*128)*128 = 147,456
-POOL2: 		[56x56x128] 			params: 0
+POOL2: 		[56x56x128]             params: 0
 CONV3-256: 	[56x56x256] 			params: (3*3*128)*256 = 294,912
 CONV3-256: 	[56x56x256] 			params: (3*3*256)*256 = 589,824
 CONV3-256: 	[56x56x256] 			params: (3*3*256)*256 = 589,824
@@ -92,8 +92,7 @@ To obtain the fixed-size 224×224 ConvNet input images, they were randomly cropp
 
 ### Training image size
 
-Let S be the smallest side of a training image. In this paper there are two approaches for setting the training scale S. The first is to fix S, which corresponds to single-scale training. In paper experiments, authors evaluated models trained at two fixed scales: S = 256 and S =
-384. Given a ConvNet configuration, they first trained the network using S = 256. To speed-up training of the S = 384 network, it was initialised with the weights pre-trained with S = 256, and the learning rate was 10​−3​.
+Let S be the smallest side of a training image. In this paper there are two approaches for setting the training scale S. The first is to fix S, which corresponds to single-scale training. In paper experiments, authors evaluated models trained at two fixed scales: S = 256 and S = 384. Given a ConvNet configuration, they first trained the network using S = 256. To speed-up training of the S = 384 network, it was initialised with the weights pre-trained with S = 256, and the learning rate was 10​−3​.
 
 The second approach to setting S is multi-scale training, where each training image is individually rescaled by randomly sampling S from a certain range [Smin, Smax], in paper authors have used Smin = 256 and Smax = 512. Since objects in images can be of different size, it is beneficial to take this into account during training. For speed reasons, training of multi-scale models is done by fine-tuning all layers of a single-scale model with the same configuration, pre-trained with fixed S = 384.
 
@@ -137,7 +136,8 @@ Authors have also compared the net B with a shallow net with five 5 × 5 conv. l
 Scale jittering at training time (S ∈ [256; 512]) leads to significantly better results than training on images with fixed smallest side (S = 256 or S = 384), even though a single scale is
 used at test time. This confirms that training set augmentation by scale jittering is indeed helpful for capturing multi-scale image statistics.
 
-<table>
+<br>
+<table border="1px solid black">
 	<tr>
 		<td rowspan="2">ConvNet config.</td>
 		<td colspan="2">Smallest image side</td>
@@ -227,7 +227,7 @@ used at test time. This confirms that training set augmentation by scale jitteri
     	<td>8.0</td>
     </tr>
 </table>
-
+<br><br>
 VGG-13 reduced the error rate from 9.4%/9.3% to 8.8%.
 
 VGG-16 reduced the error rate from 8.8%/8.7% to 8.1%.
@@ -237,7 +237,7 @@ VGG-19 reduced the error rate from 9.0%/8.7% to 8.0%.
 ### MULTI-SCALE EVALUATION
 
 Here we have the effect of scale jittering at test time. It consists of running a model over several rescaled versions of a test image. Considering that a large discrepancy between training and testing scales leads to a drop in performance, the models trained with fixed S were evaluated over three test image sizes, close to the training one: Q = {S − 32, S, S + 32}. At the same time, scale jittering at training time allows the network to be applied to a wider range of scales at test time, so the model trained with variable S ∈ [Smin; Smax] was evaluated over a larger range of sizes Q = {Smin, 0.5(Smin + Smax), Smax}. The results, presented in Table below, indicate that scale jittering at test time leads to better performance. Best single-network performance on the validation set is 24.8%/7.5% top-1/top-5 error. On the test set, the configuration E achieves 7.3% top-5 error. 
-
+<br>
 <table>
 	<tr>
 		<td rowspan="2">ConvNet config.</td>
@@ -314,7 +314,7 @@ Here we have the effect of scale jittering at test time. It consists of running 
     	<td>7.5</td>
     </tr>
 </table>
-
+<br><br>
 VGG-13 reduced the error rate from 9.2%/9.2% to 8.2%,
 
 VGG-16 reduced the error rate from 8.6%/8.6% to 7.5%,
@@ -324,7 +324,7 @@ VGG-19 reduced the error rate from 8.7%/8.6% to 7.5%,
 ### MULTI-CROP EVALUATION
 
 Using multiple crops performs slightly better than dense evaluation, and the two approaches are indeed complementary, as their combination outperforms each of them. Comparison between dense ConvNet evaluation and multi-crop evaluation is given in the table below.
-
+<br>
 <table>
 	<tr>
 		<td>ConvNet config.</td>
@@ -365,11 +365,12 @@ Using multiple crops performs slightly better than dense evaluation, and the two
     	<td>7.1</td>
     </tr>
 </table>
+<br><br>
 
 ### COMPARISON WITH THE STATE OF THE ART
 
 In the classification task of the ILSVRC-2014 challenge, “VGG” team secured 2nd place with 7.3% test error using an ensemble of 7 models. After the submission, they decreased the error rate to 6.8% using an ensemble of 2 models​.
-
+<br>
 <table>
 	<tr>
 		<td>Method</td>
@@ -466,7 +467,7 @@ In the classification task of the ILSVRC-2014 challenge, “VGG” team secured 
 		<td>-</td>
 	</tr>
 </table>
-
+<br><br>
 ## Localization Task
 
 For the localization task, a bounding box is represented by a 4-D vector storing its center coordinates, width, and height. Thus, the logistic regression objective is replaced with a Euclidean loss, which penalises the deviation of the predicted bounding box parameters from the ground-truth.
@@ -474,7 +475,7 @@ For the localization task, a bounding box is represented by a 4-D vector storing
 There is a choice of whether the bounding box prediction is shared across all classes (single-class regression, SCR) or is class-specific (per-class regression, PCR). In the former
 case, the last layer is 4-D, while in the latter it is 4000-D (since there are 1000 classes in the
 dataset).
-
+<br>
 <table>
 	<tr>
 		<td>Fine-tuned layers</td>
@@ -496,11 +497,11 @@ dataset).
 		<td>33.1</td>
 	</tr>
 </table>
-
+<br><br>
 As shown above, PCR is better than SCR. And fine-tuning all layers is better than just fine-tuned the 1st and 2nd FC layers. The results above are obtained by using just center crop.
 
 VGGNet even outperforms GoogLeNet and won the localization task in ILSVRC 2014.
-
+<br>
 <table>
 	<tr>
 		<td>Method</td>
@@ -559,7 +560,7 @@ VGGNet even outperforms GoogLeNet and won the localization task in ILSVRC 2014.
 		<td>86.2 ± 0.3</td>
 	</tr>
 </table>
-
+<br><br>
 VGGNet has the best results on VOC 2007, 2012 and Caltech 256 dataset. And it also has competitive results on the Caltech 101 dataset.
 
 ## Implementation
