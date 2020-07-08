@@ -43,27 +43,27 @@ In the above image VGG-11 is network A, VGG-11 (LRN) is network A-LRN, VGG-13 is
 Parameters of VGG16(not counting biases)
 INPUT: 		[224x224x3]             params: 0
 CONV3-64: 	[224x224x64]            params: (3*3*3)*64 = 1,728
-CONV3-64: 	[224x224x64] 			params: (3*3*64)*64 = 36,864
-POOL2: 		[112x112x64] 			params: 0
-CONV3-128: 	[112x112x128] 			params: (3*3*64)*128 = 73,728
-CONV3-128: 	[112x112x128] 			params: (3*3*128)*128 = 147,456
+CONV3-64: 	[224x224x64]            params: (3*3*64)*64 = 36,864
+POOL2: 		[112x112x64]            params: 0
+CONV3-128: 	[112x112x128]           params: (3*3*64)*128 = 73,728
+CONV3-128: 	[112x112x128]           params: (3*3*128)*128 = 147,456
 POOL2: 		[56x56x128]             params: 0
-CONV3-256: 	[56x56x256] 			params: (3*3*128)*256 = 294,912
-CONV3-256: 	[56x56x256] 			params: (3*3*256)*256 = 589,824
-CONV3-256: 	[56x56x256] 			params: (3*3*256)*256 = 589,824
-POOL2: 		[28x28x256]	 			params: 0
-CONV3-512: 	[28x28x512] 			params: (3*3*256)*512 = 1,179,648
-CONV3-512: 	[28x28x512] 			params: (3*3*512)*512 = 2,359,296
-CONV3-512: 	[28x28x512] 			params: (3*3*512)*512 = 2,359,296
-POOL2: 		[14x14x512] 			params: 0
-CONV3-512: 	[14x14x512] 			params: (3*3*512)*512 = 2,359,296
-CONV3-512: 	[14x14x512] 			params: (3*3*512)*512 = 2,359,296
-CONV3-512: 	[14x14x512] 			params: (3*3*512)*512 = 2,359,296
-POOL2: 		[7x7x512] 				params: 0
-FC: 		[1x1x4096] 				params: 7*7*512*4096 = 102,760,448
-FC: 		[1x1x4096] 				params: 4096*4096 = 16,777,216
-FC: 		[1x1x1000] 				params: 4096*1000 = 4,096,000
-									TOTAL: 138M parameters
+CONV3-256: 	[56x56x256]             params: (3*3*128)*256 = 294,912
+CONV3-256: 	[56x56x256]             params: (3*3*256)*256 = 589,824
+CONV3-256: 	[56x56x256]             params: (3*3*256)*256 = 589,824
+POOL2: 		[28x28x256]             params: 0
+CONV3-512: 	[28x28x512]             params: (3*3*256)*512 = 1,179,648
+CONV3-512: 	[28x28x512]             params: (3*3*512)*512 = 2,359,296
+CONV3-512: 	[28x28x512]             params: (3*3*512)*512 = 2,359,296
+POOL2: 		[14x14x512]             params: 0
+CONV3-512: 	[14x14x512]             params: (3*3*512)*512 = 2,359,296
+CONV3-512: 	[14x14x512]             params: (3*3*512)*512 = 2,359,296
+CONV3-512: 	[14x14x512]             params: (3*3*512)*512 = 2,359,296
+POOL2: 		[7x7x512]               params: 0
+FC: 		[1x1x4096]              params: 7*7*512*4096 = 102,760,448
+FC: 		[1x1x4096]              params: 4096*4096 = 16,777,216
+FC: 		[1x1x1000]              params: 4096*1000 = 4,096,000
+                                    TOTAL: 138M parameters
 </pre>
 
 ### Observation
@@ -238,7 +238,7 @@ VGG-19 reduced the error rate from 9.0%/8.7% to 8.0%.
 
 Here we have the effect of scale jittering at test time. It consists of running a model over several rescaled versions of a test image. Considering that a large discrepancy between training and testing scales leads to a drop in performance, the models trained with fixed S were evaluated over three test image sizes, close to the training one: Q = {S − 32, S, S + 32}. At the same time, scale jittering at training time allows the network to be applied to a wider range of scales at test time, so the model trained with variable S ∈ [Smin; Smax] was evaluated over a larger range of sizes Q = {Smin, 0.5(Smin + Smax), Smax}. The results, presented in Table below, indicate that scale jittering at test time leads to better performance. Best single-network performance on the validation set is 24.8%/7.5% top-1/top-5 error. On the test set, the configuration E achieves 7.3% top-5 error. 
 <br>
-<table>
+<table border="1px solid black">
 	<tr>
 		<td rowspan="2">ConvNet config.</td>
 		<td colspan="2">Smallest image side</td>
@@ -325,7 +325,7 @@ VGG-19 reduced the error rate from 8.7%/8.6% to 7.5%,
 
 Using multiple crops performs slightly better than dense evaluation, and the two approaches are indeed complementary, as their combination outperforms each of them. Comparison between dense ConvNet evaluation and multi-crop evaluation is given in the table below.
 <br>
-<table>
+<table border="1px solid black">
 	<tr>
 		<td>ConvNet config.</td>
 		<td>Evaluation Method</td>
@@ -371,7 +371,7 @@ Using multiple crops performs slightly better than dense evaluation, and the two
 
 In the classification task of the ILSVRC-2014 challenge, “VGG” team secured 2nd place with 7.3% test error using an ensemble of 7 models. After the submission, they decreased the error rate to 6.8% using an ensemble of 2 models​.
 <br>
-<table>
+<table border="1px solid black">
 	<tr>
 		<td>Method</td>
 		<td>top-1 val. error (%)</td>
@@ -476,7 +476,7 @@ There is a choice of whether the bounding box prediction is shared across all cl
 case, the last layer is 4-D, while in the latter it is 4000-D (since there are 1000 classes in the
 dataset).
 <br>
-<table>
+<table border="1px solid black">
 	<tr>
 		<td>Fine-tuned layers</td>
 		<td>Regression type</td>
