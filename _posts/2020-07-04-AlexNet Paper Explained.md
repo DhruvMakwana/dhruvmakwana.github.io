@@ -203,6 +203,10 @@ Results on ILSVRC-2012 are summarized below Table. The CNN described in this pap
 | 1 CNN* | 39.0% | 16.6% | - |
 | 7 CNN* | 36.7% | 15.4% | 15.3% |
 
+## Implementation
+
+Implementation of AlexNet Architecture in keras and pytorch can be found [here](https://github.com/DhruvMakwana/Computer_Vision/tree/master/AlexNet)
+
 ## Summary 
 
 1. Use Relu instead of Tanh to add non-linearity. It accelerates the speed by 6 times at the same accuracy.
