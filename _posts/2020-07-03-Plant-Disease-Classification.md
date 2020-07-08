@@ -105,17 +105,17 @@ run `python dataset.py` command to run this file
 
 we are going to use ResNet152V2 model to train for 10 epochs with early stopping. open `src/train.py` file and import following code.
 
-# importing libraries
-from glob import glob
-from keras.models import Model
-from keras.preprocessing.image import ImageDataGenerator
-from keras.layers import GlobalAveragePooling2D
-from keras.layers.core import Dropout, Dense
-from keras.applications import ResNet152V2
-from keras.applications.resnet_v2 import preprocess_input
-from keras.optimizers import Adam
-import tensorflow as tf
-s
+	# importing libraries
+	from glob import glob
+	from keras.models import Model
+	from keras.preprocessing.image import ImageDataGenerator
+	from keras.layers import GlobalAveragePooling2D
+	from keras.layers.core import Dropout, Dense
+	from keras.applications import ResNet152V2
+	from keras.applications.resnet_v2 import preprocess_input
+	from keras.optimizers import Adam
+	import tensorflow as tf
+
 Now setup directory path, and print number of total images,
 
 	train_dir  = "../dataset/Plant_leave_diseases_dataset_with_augmentation"
