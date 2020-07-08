@@ -502,7 +502,7 @@ As shown above, PCR is better than SCR. And fine-tuning all layers is better tha
 
 VGGNet even outperforms GoogLeNet and won the localization task in ILSVRC 2014.
 <br>
-<table>
+<table border="1px solid black">
 	<tr>
 		<td>Method</td>
 		<td>VOC-2007(mean AP)</td>
