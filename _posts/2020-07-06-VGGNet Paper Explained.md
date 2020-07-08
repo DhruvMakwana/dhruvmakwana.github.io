@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Understanding AlexNet paper"
+title:  "Understanding VGGNet paper"
 author: "Dhruv Makwana"
 comments: true
 ---
