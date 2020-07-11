@@ -5,6 +5,8 @@ author: "Dhruv Makwana"
 comments: true
 ---
 
+<img src="../images/resnet/image12.png">
+
 ## Overview
 
 Recent study shows that network depth is of crucial importance, and the leading results on the challenging ImageNet dataset all exploit “very deep” models, with a depth of sixteen to thirty. Many other non trivial visual recognition tasks have also greatly benefited from very deep models.
@@ -35,7 +37,7 @@ In image recognition, VLAD is a representation that encodes by the residual vect
 
 ### Shortcut Connections
 
-Practices and theories that lead to shortcut connections have been studied for a long time. Concurrent with this work, ​“highway networks”​ present shortcut connections with gating functions. These gates are data-dependent and have parameters, in contrast to identity shortcuts that are parameter-free. When a gated shortcut is “closed” (approaching zero), the layers in highway networks represent non-residual functions. On the contrary, resnet formulation always learns residual functions; resnet identity shortcuts are never closed, and all information is always passed through, with additional residual functions to be learned.
+Practices and theories that lead to shortcut connections have been studied for a long time. Concurrent with this work, ​**“highway networks”**​ present shortcut connections with gating functions. These gates are data-dependent and have parameters, in contrast to identity shortcuts that are parameter-free. When a gated shortcut is “closed” (approaching zero), the layers in highway networks represent non-residual functions. On the contrary, resnet formulation always learns residual functions; resnet identity shortcuts are never closed, and all information is always passed through, with additional residual functions to be learned.
 
 ## Deep Residual Learning
 
@@ -142,6 +144,7 @@ Authors evaluate their method on the ImageNet 2012 classification dataset that c
 
 **Plain Networks**​ Authors first evaluate 18-layer and 34-layer plain nets. The results in Table show that the deeper 34-layer plain net has higher validation error than the shallower 18-layer plain net. To reveal the reasons, they compare their training/validation errors during the training procedure. They have observed the degradation problem the 34-layer plain net has higher training error throughout the whole training procedure, even though the solution space of the 18-layer plain network is a subspace of that of the 34-layer one.
 
+<center>
 <table border="1px solid black">
 	<tr>
 		<th></th>
@@ -159,7 +162,8 @@ Authors evaluate their method on the ImageNet 2012 classification dataset that c
 		<td>25.03</td>
 	</tr>
 </table>
-
+</center>
+<br>
 **Residual Networks.**​ Here authors have evaluated 18-layer and 34- layer residual nets (ResNets). The baseline architectures are the same as the above plain nets, except that a shortcut connection is added to each pair of 3×3 filters. In the first comparison, they use identity mapping for all shortcuts and zero-padding for increasing dimensions. So they have no extra parameter compared to the plain counterparts. They have three major observations.
 
 First, the situation is reversed with residual learning the 34-layer ResNet is better than the 18-layer ResNet (by 2.8%). This indicates that we manage to obtain accuracy gains from increased depth.
@@ -180,6 +184,7 @@ B is slightly better than A. This is because the zero-padded dimensions in A ind
 
 C is marginally better than B, here extra parameters introduced by many projection shortcuts. But the small differences among A/B/C indicate that projection shortcuts are not essential for addressing the degradation problem. So we do not use option C in the rest of this paper.Identity shortcuts are particularly important for not increasing the complexity of the bottleneck architectures.
 
+<center>
 <table border="1px solid black">
 	<tr>
 		<th>Model</th>
@@ -237,7 +242,8 @@ C is marginally better than B, here extra parameters introduced by many projecti
 		<td>5.71</td>
 	</tr>
 </table>
-
+</center>
+<br>
 **Deeper Bottleneck Architectures.**​ For each residual function F, Authors use a stack of 3 layers instead of 2. The three layers are 1×1, 3×3, and 1×1 convolutions, where the 1×1 layers are responsible for reducing and then increasing dimensions, leaving the 3×3 layer a bottleneck with smaller input/output dimensions. The parameter-free identity shortcuts are particularly important for the bottleneck architectures. Identity shortcuts lead to more efficient models for the bottleneck designs.
 
 **50-layer ResNet:**​ Replace each 2-layer block in the 34-layer net with this 3-layer bottleneck block, resulting in a 50-layer ResNet. Authors use option B for increasing dimensions. This model has 3.8 billion FLOPs.
