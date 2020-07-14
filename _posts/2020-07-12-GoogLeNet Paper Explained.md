@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Understanding ResNet paper"
+title:  "Understanding GoogLeNet paper"
 author: "Dhruv Makwana"
 comments: true
 ---
