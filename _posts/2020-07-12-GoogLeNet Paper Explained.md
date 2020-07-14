@@ -28,19 +28,15 @@ The most straightforward way of improving the performance of deep neural network
 
 The fundamental way of solving both issues would be by ultimately moving from fully connected to sparsely connected architectures, even inside the convolutions.  If the probability distribution of the data-set is representable by a large, very sparse deep neural network, then the optimal network topology can be constructed layer by layer by analyzing the correlation statistics of the activations of the last layer and clustering neurons with highly correlated outputs. Although the strict mathematical proof requires very strong conditions, the fact that this statement resonates with the well known Hebbian principle – neurons that fire together, wire together – suggests that the underlying idea is applicable even under less strict conditions, in practice. 
 
-<div class="image12">
-    <div class="imgContainer">
-        <img src="../images/googlenet/image4.png" height="200" width="200"/>
-        <p>Dense Architecture</p>
-    </div>
-    <div class="imgContainer">
-        <img class="middle-img" src="../images/googlenet/image9.png"/ height="200" width="200"/>
-        <p>Sparse Architecture</p>
-    </div>
-</div>
-.imgContainer{
-	float:left;
-}
+<p align="center">
+	<img src="../images/googlenet/image4.png">
+</p>
+<p align="center">Dense Architecture</p>
+
+<p align="center">
+	<img src="../images/googlenet/image9.png">
+</p>
+<p align="center">Sparse Architecture</p>
 
 ## Architectural Details
 
@@ -373,7 +369,7 @@ The approach taken by GoogLeNet for detection is similar to the R-CNN, but is au
 
 ## Implementation
 
-Implementation of ResNet Architecture in keras and pytorch can be found [here](https://github.com/DhruvMakwana/Computer_Vision/tree/master/GoogLeNet)
+Implementation of GoogLeNet Architecture in keras and pytorch can be found [here](https://github.com/DhruvMakwana/Computer_Vision/tree/master/GoogLeNet)
 
 ## Reference:
 
