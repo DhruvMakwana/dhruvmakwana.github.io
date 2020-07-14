@@ -148,7 +148,7 @@ Their final submission in the challenge obtains a top-5 error of 6.67% on both t
 
 ### Results
 <br>
-<p align="center">
+<center>
 	<table border="1px solid black">
 		<tr>
 			<th>Team</th>
@@ -207,9 +207,9 @@ Their final submission in the challenge obtains a top-5 error of 6.67% on both t
 			<td>no</td>
 		</tr>
 	</table>
-</p>
+</center>
 <br><br>
-<p align="center">
+<center>
 	<table border="1px solid black">
 		<tr>
 			<th>Number of models</th>
@@ -261,7 +261,7 @@ Their final submission in the challenge obtains a top-5 error of 6.67% on both t
 			<td>-3.45%</td>
 		</tr>
 	</table>
-</p>
+</center>
 <br><br>
 ## ILSVRC 2014 Detection Challenge Setup and Results
 
@@ -269,7 +269,7 @@ The approach taken by GoogLeNet for detection is similar to the R-CNN, but is au
 
 ### Results
 <br>
-<p align="center">
+<center>
 	<table border="1px solid black">
 		<tr>
 			<th>Team</th>
@@ -317,10 +317,10 @@ The approach taken by GoogLeNet for detection is similar to the R-CNN, but is au
 			<td>CNN</td>
 		</tr>
 	</table>
-</p>
+</center>
 <br><br>
 
-<p align="center">
+<center>
 	<table border="1px solid black">
 		<tr>
 			<th>Team</th>
@@ -365,7 +365,7 @@ The approach taken by GoogLeNet for detection is similar to the R-CNN, but is au
 			<td>yes</td>
 		</tr>
 	</table>
-</p>
+</center>
 
 ## Implementation
 
