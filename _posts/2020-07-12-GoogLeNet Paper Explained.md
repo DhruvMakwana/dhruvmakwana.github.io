@@ -31,12 +31,12 @@ The fundamental way of solving both issues would be by ultimately moving from fu
 <p align="center">
 	<img src="../images/googlenet/image4.png">
 </p>
-<p align="center">Dense Architecture</p>
+<center>Dense Architecture</center>
 
 <p align="center">
 	<img src="../images/googlenet/image9.png">
 </p>
-<p align="center">Sparse Architecture</p>
+<center>Sparse Architecture</center>
 
 ## Architectural Details
 
