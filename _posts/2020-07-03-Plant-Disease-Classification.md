@@ -305,7 +305,7 @@ print(result)
 
 Make a call to function build with image path if a call is made externally. To run this file execute `python predict.py` command. All set up now let's build flask application. We require 2 HTML files `index.html` for the main home page and `result.html` to show the result of the predicted class. We can combine tasks in a single file also. We need file uploader in index.html file which uploads the image and using main.py we will fetch that image and predict its class. Let's look at the file uploader code. 
 
-```python
+```html
 <form action="/result" method="post" enctype="multipart/form-data">
 	<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <div class="file-upload">
@@ -329,7 +329,7 @@ Make a call to function build with image path if a call is made externally. To r
 
 We are using form action to be "/result" so it transfers form data to '/result' URL. the method should be post and enctype="multipart/form-data" is required. The main focus of code is input class line here name variable is used in fetching time so don't change it from name="file". Next look at the contact us section, here we will take data from users and send it via the mail. 
 
-```python
+```html
 <form action="/contact" method="POST">
 	<div class="w3-row-padding" style="margin:0 -16px 8px -16px">
 		<div class="w3-half">
@@ -392,7 +392,7 @@ def result():
 
 here, we are fetching image file with request.files.get command where the file is the variable we have used in index.html as name property. To use this image for prediction, we need to save it in a folder and take it from there, to do so we have used an upload folder where the image is saved and taken when needed. After that image is passed to build function which takes image path as input and returns its predicted class. We need this result to be printed on the result page so we are sending this variable to the result page in render_template. Note that here we have used two render template commands to make sure we will send the result page only if we get post request. Following code handles this result variable in result.html file.
 
-```python
+```html
 <div class="w3-black" id="try">
 	<div class="w3-container w3-content w3-padding-64" style="max-width:800px">
   		<h2 class="w3-wide w3-center">Result</h2>

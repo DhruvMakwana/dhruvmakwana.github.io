@@ -149,7 +149,7 @@ Their final submission in the challenge obtains a top-5 error of 6.67% on both t
 ### Results
 <br>
 <center>
-	<table border="1px solid black">
+	<table border="1px solid black" style="text-align:center">
 		<tr>
 			<th>Team</th>
 			<th>Year</th>
@@ -209,8 +209,9 @@ Their final submission in the challenge obtains a top-5 error of 6.67% on both t
 	</table>
 </center>
 <br><br>
+
 <center>
-	<table border="1px solid black">
+	<table border="1px solid black" style="text-align:center">
 		<tr>
 			<th>Number of models</th>
 			<th>Number of Crops</th>
@@ -271,7 +272,7 @@ The approach taken by GoogLeNet for detection is similar to the R-CNN, but is au
 <br>
 <center>
 	<table border="1px solid black" style="text-align:center">
-		<tr style="text-align:center">
+		<tr>
 			<th>Team</th>
 			<th>Year</th>
 			<th>Price</th>
@@ -321,7 +322,7 @@ The approach taken by GoogLeNet for detection is similar to the R-CNN, but is au
 <br><br>
 
 <center>
-	<table border="1px solid black">
+	<table border="1px solid black" style="text-align:center">
 		<tr>
 			<th>Team</th>
 			<th>mAP</th>

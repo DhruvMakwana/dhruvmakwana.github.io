@@ -145,7 +145,7 @@ Authors evaluate their method on the ImageNet 2012 classification dataset that c
 **Plain Networks**​ Authors first evaluate 18-layer and 34-layer plain nets. The results in Table show that the deeper 34-layer plain net has higher validation error than the shallower 18-layer plain net. To reveal the reasons, they compare their training/validation errors during the training procedure. They have observed the degradation problem the 34-layer plain net has higher training error throughout the whole training procedure, even though the solution space of the 18-layer plain network is a subspace of that of the 34-layer one.
 
 <center>
-<table border="1px solid black">
+<table border="1px solid black" style="text-align:center">
 	<tr>
 		<th></th>
 		<th>Plain</th>
@@ -185,7 +185,7 @@ B is slightly better than A. This is because the zero-padded dimensions in A ind
 C is marginally better than B, here extra parameters introduced by many projection shortcuts. But the small differences among A/B/C indicate that projection shortcuts are not essential for addressing the degradation problem. So we do not use option C in the rest of this paper.Identity shortcuts are particularly important for not increasing the complexity of the bottleneck architectures.
 
 <center>
-<table border="1px solid black">
+<table border="1px solid black" style="text-align:center">
 	<tr>
 		<th>Model</th>
 		<th>Top-1 error</th>
