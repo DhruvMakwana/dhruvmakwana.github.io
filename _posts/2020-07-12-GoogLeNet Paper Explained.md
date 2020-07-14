@@ -270,7 +270,7 @@ The approach taken by GoogLeNet for detection is similar to the R-CNN, but is au
 ### Results
 <br>
 <center>
-	<table border="1px solid black">
+	<table border="1px solid black" align="center">
 		<tr>
 			<th>Team</th>
 			<th>Year</th>
