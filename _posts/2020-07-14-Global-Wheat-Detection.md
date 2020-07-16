@@ -98,7 +98,7 @@ df.head()
 ```python
 output:
 
-	image_id	width	height	bbox						source
+	image_id	width	height	bbox	source
 0	b6ab77fd7	1024	1024	[834.0, 222.0, 56.0, 36.0]	usask_1
 1	b6ab77fd7	1024	1024	[226.0, 548.0, 130.0, 58.0]	usask_1
 2	b6ab77fd7	1024	1024	[377.0, 504.0, 74.0, 160.0]	usask_1
@@ -501,7 +501,7 @@ train_df.head()
 ```
 ```python
 output:
-	image_id	width	height	bbox						source
+	image_id	width	height	bbox	source
 0	b6ab77fd7	1024	1024	[834.0, 222.0, 56.0, 36.0]	usask_1
 1	b6ab77fd7	1024	1024	[226.0, 548.0, 130.0, 58.0]	usask_1
 2	b6ab77fd7	1024	1024	[377.0, 504.0, 74.0, 160.0]	usask_1
@@ -545,7 +545,7 @@ img_bb.head()
 
 ```python
 output:
-	image_id	bbox						x	y	w	h	xy_min	xy_max
+	image_id	bbox	x	y	w	h	xy_min	xy_max
 0	b6ab77fd7	[834.0, 222.0, 56.0, 36.0]						
 1	b6ab77fd7	[226.0, 548.0, 130.0, 58.0]						
 2	b6ab77fd7	[377.0, 504.0, 74.0, 160.0]						
@@ -587,7 +587,7 @@ Wall time: 5min 27s
 
 Now we have data in Yolo format so let's try plotting one image with a bounding box to check if we have correct data format.
 
-<img src="..images/gwd/image14.png">
+<img src="../images/gwd/image14.png">
 
 ## Converting into yolo label
 
@@ -604,7 +604,7 @@ Number of images without label: 49
 
 We need labels in .txt files each for one image. So lets first create blank {image_id}.txt and then fill data in the {image_id}.txt files.
 
-# becuase 49 images dont have labels and it will cuase error while training  
+Becuase 49 images dont have labels and it will cuase error while training  
 
 ```python
 for img in train_dir_images_list:
@@ -1035,7 +1035,8 @@ Now upload the  yolov4.cfg and train.txt back to colab from Google Drive.
 Create two new files in google drive in Dataset folder named obj.names and obj.data
 
 1. obj.names: Write this 1 line in obj.names file 
-	`Wheat`
+```Wheat```
+
 2. obj.data: Write this 4 lines in obj.data file
 ```
 	classes = 1
@@ -1087,11 +1088,10 @@ imShow('predictions.jpg')
 
 ## Results
 
-<img src="../images/gwd/image15">
+<img src="../images/gwd/image15.png">
 
-<img src="../images/gwd/image15">
+<img src="../images/gwd/image16.png">
 
-<img src="../images/gwd/image15">
+<img src="../images/gwd/image17.png">
 
 For more detail of Training YoloV4 with Global Wheat Detection and full code visit [here](https://github.com/DhruvMakwana/Global-Wheat-Detection/blob/master/training/YOLO/YOLOV4/Training_YOLOV4.ipynb)
-
